@@ -1,0 +1,41 @@
+name: Deploy skyfi.social
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'skyfi.social/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'skyfi.social/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+    
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./skyfi.social
+    
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages-skyfi-social"
+  cancel-in-progress: false
