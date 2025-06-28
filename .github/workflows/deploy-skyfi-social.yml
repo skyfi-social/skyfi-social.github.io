@@ -3,8 +3,8 @@ name: Deploy skyfi.social
 on:
   push:
     branches: [ main ]
-#    paths:
-#      - 'skyfi.social/**'
+    paths:
+     - 'skyfi.social/**'
   pull_request:
     branches: [ main ]
     paths:
