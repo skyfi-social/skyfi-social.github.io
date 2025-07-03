@@ -21,26 +21,40 @@ jobs:
         ref: ${{ inputs.branch }}
         token: ${{ secrets.GITHUB_TOKEN }}
     
-    # - name: Setup Node.js
-    #   uses: actions/setup-node@v4
-    #   with:
-    #     node-version: '20'
-    #     cache: 'yarn'
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'yarn'
     
-    # - name: Install dependencies
-    #   run: yarn install --frozen-lockfile
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
     
-    # - name: Build web application
-    #   run: yarn build-web
-
-    - name: Make web-build directory
-      run: mkdir web-build
+    - name: Build web application
+      run: yarn build-web
    
     - name: Create CNAME file for app.skyfi.social
       run: echo "app.skyfi.social" > ./web-build/CNAME
     
-    - name: Copy client-metadata.json to web-build
-      run: cp ./app.skyfi.social/client-metadata.json ./web-build/
+    - name: Create client-metadata.json in web-build
+      run: |
+        cat > ./web-build/client-metadata.json << 'EOF'
+        {
+          "client_id": "https://app.skyfi.social/client-metadata.json",
+          "client_name": "Skyfi",
+          "client_uri": "https://app.skyfi.social",
+          "logo_uri": "https://skyfi.social/favicon.png",
+          "tos_uri": "https://skyfi.social/tos",
+          "policy_uri": "https://app.skyfi.social/privacy-policy",
+          "redirect_uris": ["https://app.skyfi.social/oauth/callback"],
+          "scope": "atproto transition:generic",
+          "grant_types": ["authorization_code", "refresh_token"],
+          "response_types": ["code"],
+          "application_type": "web",
+          "token_endpoint_auth_method": "none",
+          "dpop_bound_access_tokens": true
+        }
+        EOF
     
     - name: Setup Pages
       uses: actions/configure-pages@v4
