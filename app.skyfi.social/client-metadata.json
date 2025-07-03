@@ -1,0 +1,15 @@
+{
+  "client_id": "https://app.skyfi.social/client-metadata.json",
+  "client_name": "Skyfi",
+  "client_uri": "https://app.skyfi.social",
+  "logo_uri": "https://skyfi.social/favicon.png",
+  "tos_uri": "https://skyfi.social/tos",
+  "policy_uri": "https://app.skyfi.social/privacy-policy",
+  "redirect_uris": ["https://app.skyfi.social/oauth/callback"],
+  "scope": "atproto transition:generic",
+  "grant_types": ["authorization_code", "refresh_token"],
+  "response_types": ["code"],
+  "application_type": "web",
+  "token_endpoint_auth_method": "none",
+  "dpop_bound_access_tokens": true
+}

@@ -1,14 +1,15 @@
 name: Deploy skyfi.social
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-     - 'skyfi.social/**'
-  pull_request:
-    branches: [ main ]
-    paths:
-      - 'skyfi.social/**'
+  workflow_dispatch:
+  # push:
+  #   branches: [ main ]
+  #   paths:
+  #    - 'skyfi.social/**'
+  # pull_request:
+  #   branches: [ main ]
+  #   paths:
+  #     - 'skyfi.social/**'
 
 jobs:
   deploy:
