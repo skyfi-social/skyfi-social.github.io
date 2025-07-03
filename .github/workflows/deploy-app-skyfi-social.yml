@@ -31,13 +31,13 @@ jobs:
       run: yarn install --frozen-lockfile
     
     - name: Build web application
-      run: yarn build-web
+      run: mkdir build-web
     
     - name: Create CNAME file for app.skyfi.social
       run: echo "app.skyfi.social" > ./web-build/CNAME
     
     - name: Copy client-metadata.json to web-build
-      run: cp ./app.skyfi.social/client-metadata.json ./web-build/
+      run: cp ${{ github.workspace }}/app.skyfi.social/client-metadata.json ./web-build/
     
     - name: Setup Pages
       uses: actions/configure-pages@v4
