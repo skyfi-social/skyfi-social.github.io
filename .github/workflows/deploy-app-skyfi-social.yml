@@ -27,12 +27,15 @@ jobs:
         node-version: '20'
         cache: 'yarn'
     
-    - name: Install dependencies
-      run: yarn install --frozen-lockfile
+    # - name: Install dependencies
+    #   run: yarn install --frozen-lockfile
     
-    - name: Build web application
-      run: mkdir build-web
-    
+    # - name: Build web application
+    #   run: yarn build-web
+
+    - name: Make web-build directory
+      run: yarn web-build
+   
     - name: Create CNAME file for app.skyfi.social
       run: echo "app.skyfi.social" > ./web-build/CNAME
     
