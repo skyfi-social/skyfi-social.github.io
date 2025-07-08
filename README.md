@@ -2,6 +2,14 @@
 
 This repository hosts two different sites for the skyfi ecosystem:
 
+## 🚀 About skyfi
+
+Skyfi is a fork of the Bluesky client that allows users to:
+- Connect Solana and Ethereum wallets to their Bluesky profile
+- Enjoy enhanced social networking with features that leverage a client with a builtin wallet.
+
+Our goal is to attract and inspire developers to bring new ideas to the AT Protocol ecosystem. If you are a designer or a developers, bring your ideas and PRs.
+
 ## 🌐 Sites
 
 ### 1. skyfi.social (Landing Page)
@@ -12,15 +20,27 @@ This repository hosts two different sites for the skyfi ecosystem:
 ### 2. app.skyfi.social (Web Application)
 - **Source**: `skyfi-social/social-app` repository
 - **URL**: [app.skyfi.social](https://app.skyfi.social)
-- **Deployment**: Manual via GitHub Actions workflow
-
-## 🚀 About skyfi
-
-Skyfi is a fork Bluesky client that allows users to:
-- Connect Solana and Ethereum wallets to their Bluesky profile
-- Enjoy enhanced social networking with crypto features
+- **Deployment**: via Cloudflare
 
 ## 🛠️ Development
+
+### Web App (app.skyfi.social)
+Built from the `skyfi-social/social-app` repository (Bluesky fork). Our goal is to stay up-to-date with the Blueskay changes to main. We will periodically merge in changes from `main`. (In the early days prior to others working on this project we are using rebase to accomplish this.)
+
+2. Run the "Deploy app.skyfi.social" workflow
+3. Specify the branch to deploy (default: "skyfi")
+
+The workflow will:
+- Clone the [`skyfi-social/social-app`](https://github.com/skyfi-social/social-app) repo
+- Checkout the `skyfi` branch.
+- Create a branch with your cool idea. `git checkout -b yourname/cool-idea`
+- Install dependencies with `yarn`
+- Build the web app with `yarn build-web`
+- You should be able to use it by visiting `http://127.0.0.1:19006`
+- Commit and push your changes, then submit a PR
+
+#### Deployment
+1. The `skyfi` branch is automatically deployed via Cloudflare
 
 ### Landing Page (skyfi.social)
 Built with:
@@ -35,23 +55,10 @@ Built with:
 #### Deployment
 Automatically deploys when changes are made to files in the `skyfi.social/` directory.
 
-### Web App (app.skyfi.social)
-Built from the `skyfi-social/social-app` repository (Bluesky fork).
-
-#### Manual Deployment
-1. Go to the Actions tab in GitHub
-2. Run the "Deploy app.skyfi.social" workflow
-3. Specify the branch to deploy (default: "skyfi")
-
-The workflow will:
-- Checkout the specified branch from `skyfi-social/social-app`
-- Install dependencies with `yarn`
-- Build the web app with `yarn build-web`
-- Deploy to GitHub Pages
-
 ## 🔗 Links
 
 - **Live App**: [app.skyfi.social](https://app.skyfi.social)
+- **Skyfi App Rep**: [github.com/skyfi-social](https://github.com/skyfi-social/social-app)
 - **GitHub Organization**: [github.com/skyfi-social](https://github.com/skyfi-social)
 - **Website**: [skyfi.social](https://skyfi.social)
 
