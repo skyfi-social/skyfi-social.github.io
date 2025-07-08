@@ -1,8 +1,8 @@
-# skyfi - Connecting crypto communities on Bluesky (ATProto)
+# Skyfi - Connecting crypto communities on Bluesky (ATProto)
 
 This repository hosts two different sites for the skyfi ecosystem:
 
-## 🚀 About skyfi
+## 🚀 About Skyfi
 
 Skyfi is a fork of the Bluesky client that allows users to:
 - Connect Solana and Ethereum wallets to their Bluesky profile
