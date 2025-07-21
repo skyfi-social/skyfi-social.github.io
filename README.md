@@ -1,64 +1,84 @@
 # Skyfi - Connecting crypto communities on Bluesky (ATProto)
 
-This repository hosts two different sites for the skyfi ecosystem:
+Skyfi is an open source fork of the Bluesky client focused on features for crypto-curious users and crypto natives.
 
 ## 🚀 About Skyfi
 
-Skyfi is a fork of the Bluesky client that allows users to:
-- Connect Solana and Ethereum wallets to their Bluesky profile
-- Enjoy enhanced social networking with features that leverage a client with a builtin wallet.
+The goal of Skyfi is to be a platform for crypto-curious users and crypto natives to experiment and build features on AT Protocol. We aim to attract and inspire developers to bring new ideas to the AT Protocol ecosystem. Whether you're a designer or a developer, bring your ideas and PRs.
 
-Our goal is to attract and inspire developers to bring new ideas to the AT Protocol ecosystem. If you are a designer or a developers, bring your ideas and PRs.
+Skyfi is a fork of the Bluesky client that allows existing Bluesky users to connect Solana and Ethereum wallets to their Bluesky profile. Login uses OAuth to an existing account, and connecting crypto wallets requires a browser-based wallet extension - tested with Phantom, MetaMask, and Brave wallet.
 
-## 🌐 Sites
+### Roadmap
+- Direct and group messaging based on Skyfi's novel use of encrypted messages over SMTP. (In progress)
+- Profile updates to display crypto wallet addresses 
+- Send USDC to Skyfi users
+- Onboard new users with a built-in native wallet
 
-### 1. skyfi.social (Landing Page)
+### Advanced Experimental features
+In addition to incremental features on the roadmap, we are also experimenting with more advanced crypto-native features.
+
+#### PDS with wallet-based authentication
+Once we have native wallet support in the Skyfi client, we can use this wallet to authenticate with the PDS instead of using a password in the PDS.
+
+#### Farcaster FID as new DID
+
+Farcaster has a robust decentralized ID with an excellent balance of self-custody keys and recoverability when self-custody keys are lost. Farcaster IDs are managed on Optimism, an Ethereum L2, making them censorship-resistant. This change would be very experimental because it is not compatible with the AT Protocol unless endorsed by the Bluesky team.
+
+Bring your ideas for enhanced social networking with features that leverage a Bluesky client with a built-in wallet.
+
+## https://skyfi.social
+
+This repository hosts Skyfi.social site on Github Pages.
+
 - **Location**: `./skyfi.social/` directory
 - **URL**: [skyfi.social](https://skyfi.social)
 - **Deployment**: Automatic on any changes to `skyfi.social/` directory
 
-### 2. app.skyfi.social (Web Application)
-- **Source**: `skyfi-social/social-app` repository
-- **URL**: [app.skyfi.social](https://app.skyfi.social)
-- **Deployment**: via Cloudflare
-
-## 🛠️ Development
-
-### Web App (app.skyfi.social)
-Built from the `skyfi-social/social-app` repository (Bluesky fork). Our goal is to stay up-to-date with the Blueskay changes to main. We will periodically merge in changes from `main`. (In the early days prior to others working on this project we are using rebase to accomplish this.)
-
-2. Run the "Deploy app.skyfi.social" workflow
-3. Specify the branch to deploy (default: "skyfi")
-
-The workflow will:
-- Clone the [`skyfi-social/social-app`](https://github.com/skyfi-social/social-app) repo
-- Checkout the `skyfi` branch.
-- Create a branch with your cool idea. `git checkout -b yourname/cool-idea`
-- Install dependencies with `yarn`
-- Build the web app with `yarn build-web`
-- You should be able to use it by visiting `http://127.0.0.1:19006`
-- Commit and push your changes, then submit a PR
-
-#### Deployment
-1. The `skyfi` branch is automatically deployed via Cloudflare
-
-### Landing Page (skyfi.social)
 Built with:
 - HTML5
 - Custom CSS
 - Vanilla JavaScript
 
-#### Local Development
+### Local Development
 1. Navigate to the `skyfi.social` directory
 2. Open `index.html` in your browser
 
-#### Deployment
+### Deployment
 Automatically deploys when changes are made to files in the `skyfi.social/` directory.
+
+## Skyfi Web App https://app.skyfi.social
+- **Source**: `https://github.com/skyfi-social/social-app` repository
+- **URL**: [app.skyfi.social](https://app.skyfi.social)
+- **Deployment**: via Cloudflare
+
+## 🛠️ Development
+
+### Prerequisites
+- Node.js and yarn
+- Browser-based crypto wallet (Phantom, MetaMask, or Brave wallet)
+
+### Web App Development (app.skyfi.social)
+
+The web app is built from the [`skyfi-social/social-app`](https://github.com/skyfi-social/social-app) repository, a fork of the [Bluesky repo](https://github.com/bluesky-social/social-app). Our goal is to stay up-to-date with Bluesky changes on the main branch by periodically merging changes from `main`.
+
+#### Getting Started
+1. Clone the [`skyfi-social/social-app`](https://github.com/skyfi-social/social-app) repo
+2. Checkout the `skyfi` branch: `git checkout skyfi`
+3. Create a feature branch: `git checkout -b yourname/cool-idea`
+4. Install dependencies: `yarn install`
+5. Start development server: `yarn web`
+6. Open `http://127.0.0.1:19006` in your browser
+7. Make your changes and test thoroughly
+8. Commit and push your changes, then submit a PR
+
+#### Deployment
+The `skyfi` branch is automatically deployed to [app.skyfi.social](https://app.skyfi.social) via Cloudflare when changes are merged.
+
 
 ## 🔗 Links
 
 - **Live App**: [app.skyfi.social](https://app.skyfi.social)
-- **Skyfi App Rep**: [github.com/skyfi-social](https://github.com/skyfi-social/social-app)
+- **Skyfi App Repo**: [github.com/skyfi-social/social-app](https://github.com/skyfi-social/social-app)
 - **GitHub Organization**: [github.com/skyfi-social](https://github.com/skyfi-social)
 - **Website**: [skyfi.social](https://skyfi.social)
 
